@@ -1,4 +1,3 @@
-package hellofx;
 
 public class Chatbot {
 

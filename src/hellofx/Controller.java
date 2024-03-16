@@ -1,29 +1,37 @@
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
-public class Controller {
+import java.io.IOException;
+import java.util.concurrent.ExecutionException;
+
+public class ChatController {
+
+    @FXML
+    private TextField inputField;
 
     @FXML
     private TextArea chatArea;
 
-    @FXML
-    private TextArea inputArea;
-
-    private Chatbot chatbot;
-    private AnimationWriter animationWriter;
+    private ChatbotClient chatbotClient = new ChatbotClient();
 
     @FXML
-    public void initialize() {
-        chatbot = new Chatbot();
-        animationWriter = new AnimationWriter();
-    }
+    private void sendMessage() {
+        String message = inputField.getText().trim();
+        if (message.isEmpty()) {
+            return;
+        }
 
-    @FXML
-    void onSendButtonClicked(ActionEvent event) {
-        String question = inputArea.getText();
-        String response = chatbot.respondTo(question);
-        animationWriter.writeTextAnimation(chatArea, response);
+        chatArea.appendText("You: " + message + "\n");
+        inputField.clear();
+
+        new Thread(() -> {
+            try {
+                String response = chatbotClient.chat(message);
+                chatArea.appendText("Chatbot: " + response + "\n");
+            } catch (IOException e) {
+                chatArea.appendText("Error: " + e.getMessage() + "\n");
+            }
+        }).start();
     }
 }

@@ -7,3 +7,6 @@ aux questions, fournir des informations ou assister les utilisateurs dans diffé
 Dans notre cas on va s'en servir pour qu'il puisse répondre aux différentes intérogations qu'aront des élèves sur leurs cours.
 
 ## Pré requis
+Télécharger la version correspondant à votre os, en architecture x64 et de type SDK:
+https://gluonhq.com/products/javafx/
+

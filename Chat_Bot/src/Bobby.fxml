@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <left>
+      <HBox prefHeight="700.0" prefWidth="396.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="64.0" styleClass="dark-gray-background" stylesheets="@../values/styles.css">
+               <children>
+                  <Pane prefHeight="241.0" prefWidth="64.0" />
+                  <ImageView fitHeight="48.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icones/kisspng-circle-message-bubble-5ab04f92695b58.2711984515215041464316.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="48.0" fitWidth="38.0" opacity="0.31" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icones/kisspng-computer-icons-download-icon-settings-5b13aa3ec7f616.8651550515280154228191.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="48.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icones/kisspng-computer-icons-google-account-user-profile-iconfin-png-icons-download-profile-5ab0301e32cb90.1777380215214960942081.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <ImageView fitHeight="48.0" fitWidth="38.0" onMouseClicked="#quitter" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icones/kisspng-emergency-exit-exit-sign-clip-art-exit-tunes-presents-vocalonation-5b1c414b45f3b7.5348993315285783792865.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox prefHeight="700.0" prefWidth="336.0" styleClass="gray-background" stylesheets="@../values/styles.css">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="42.0" prefWidth="260.0" stylesheets="@../values/styles.css">
+                     <children>
+                        <ImageView fx:id="searchIcon" fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icones/kisspng-magnifying-glass-computer-icons-clip-art-5adba24956b538.6564704615243433693552.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="searchField" promptText="Search" styleClass="transparent-background" stylesheets="@../values/styles.css">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Ebrima" size="15.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="dark-gray-background" />
+                        <String fx:value="radius" />
+                     </styleClass>
+                  </HBox>
+                  <Pane prefHeight="2.0" prefWidth="200.0" styleClass="dark-gray-background" stylesheets="@../values/styles.css" />
+                  <HBox fx:id="chatHistoryContainer" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icones/kisspng-computer-icons-internet-bot-robot-clip-art-angry-mother-5b21993b7bfd96.7747998115289285715079.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="211.0">
+                           <children>
+                              <Label text="History">
+                                 <font>
+                                    <Font name="Ebrima" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="334.0">
+                     <children>
+                        <Button fx:id="newChatButton" contentDisplay="CENTER" mnemonicParsing="false" text="New chat" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="244.0" prefWidth="334.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </left>
+   <center>
+      <VBox prefHeight="700.0" prefWidth="609.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="dark-gray-background" stylesheets="@../values/styles.css">
+               <children>
+                  <Label text="History">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <ScrollPane fx:id="scrollPane" prefHeight="539.0" prefWidth="604.0" stylesheets="@../values/styles.css">
+               <VBox fx:id="messageContainer" prefHeight="400.0" prefWidth="600.0">
+                  <!-- Ajoutez le contenu de votre VBox ici -->
+               </VBox>
+            </ScrollPane>
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="604.0">
+               <children>
+                  <TextField fx:id="messageTextField" onAction="#sendMessage" prefHeight="37.0" prefWidth="534.0" promptText="Type something to send ..." styleClass="light-gray-background" stylesheets="@../values/styles.css" />
+                  <ImageView fitHeight="30.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icones/kisspng-computer-icons-button-send-email-button-5ac4bc896d9823.4635189215228427614489.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
